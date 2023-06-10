@@ -15,10 +15,12 @@ import Messages from "./pages/messages/Messages";
 import Footer from "./components/footer/Footer";
 import Add from "./pages/add/Add";
 import './app.scss'
+// import Game from "./Game";
 function App() {
   const Layout = ()=>{
     return(
       <>
+      {/* <Game/> */}
       <Navbar/>
       <Outlet/>
       <Footer/>
