@@ -163,22 +163,4 @@ export const cards = [
       star: 4,
       username: "Walton Shepard ",
     },
-    {
-      id: 7,
-      img: "https://images.pexels.com/photos/6039245/pexels-photo-6039245.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      pp: "https://images.pexels.com/photos/720606/pexels-photo-720606.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      desc: "I will generate images with your prompts using ai dalle",
-      price: 89,
-      star: 5,
-      username: "Waverly Schaefer",
-    },
-    {
-      id: 8,
-      img: "https://images.pexels.com/photos/5490778/pexels-photo-5490778.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      pp: "https://images.pexels.com/photos/1699159/pexels-photo-1699159.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      desc: "I will create custom art using midjourney generator",
-      price: 110,
-      star: 4,
-      username: "Wilton Hunt",
-    },
   ];

@@ -42,7 +42,7 @@ const Navbar = () => {
               {!currentUser && <button>Join</button>}
               {currentUser && (
                 <div className="user" onClick={()=>setOpen(!open)} >
-                  <img src="https://images.pexels.com/photos/1115697/pexels-photo-1115697.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
+                  <img src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
                   <span>{currentUser?.username}</span>
                  {open && <div className="options"  >
                     {currentUser?.isSeller &&(
