@@ -15,12 +15,16 @@ import Messages from "./pages/messages/Messages";
 import Footer from "./components/footer/Footer";
 import Add from "./pages/add/Add";
 import './app.scss'
+import ScrollToTop from "./components/ScrollToTop";
+import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
 // import Game from "./Game";
 function App() {
   const Layout = ()=>{
     return(
       <>
       {/* <Game/> */}
+      <ScrollToTop/>
       <Navbar/>
       <Outlet/>
       <Footer/>
@@ -64,7 +68,22 @@ function App() {
         {
           path:"/message/:id",
           element:<Message/>
+        },{
+          path: "/register",
+          element: <Register />,
         },
+        {
+          path: "/login",
+          element: <Login />,
+        },
+        // {
+        //   path: "/pay/:id",
+        //   element: <Pay />,
+        // },
+        // {
+        //   path: "/success",
+        //   element: <Success />,
+        // },
       ]
     },
   ]);
