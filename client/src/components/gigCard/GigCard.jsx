@@ -1,21 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './GigCard.scss'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
+import { useQuery } from '@tanstack/react-query'
 
 const GigCard = ({item}) => {
+  
+  const { isLoading, error, data } = useQuery({
+    queryKey: ['gig'],
+    queryFn:async () => await axios.get(`/api/user/single/${item.userId}`).then((res)=>{return res.data})
+      
+  })
   return (
-    <Link to={"/gig/123"} className='link' >
+    <Link to={`/gig/${item._id}`} className='link' >
     <div className="gigCard">
-        <img src={item.img} alt="" />
+        <img src={item.cover} alt="" />
         <div className="info">
-          <div className="user">
-            <img src={item.pp} alt="" />
-            <span>{item.username}</span>
-          </div>
+          {isLoading ? "Loading..." : error ? "Something went wrong! Try again later" : (<div className="user">
+            <img src={data.img || "https://i.ibb.co/MBtjqXQ/no-avatar.gif"} alt="" />
+            <span>{data.username}</span>
+          </div>)
+          }
           <p>{item.desc}</p>
           <div className="star">
             <img src="./img/star.png" alt="" />
-            <span>{item.star}</span>
+            <span>{Math.round(item.totalStars / item.starNumber)}</span>
           </div>
         </div>
         <hr />

@@ -19,15 +19,25 @@ import ScrollToTop from "./components/ScrollToTop";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 // import Game from "./Game";
+import {
+  QueryClient,
+  QueryClientProvider,
+  // useQuery,
+} from '@tanstack/react-query'
+
+
 function App() {
+  const queryClient = new QueryClient()
   const Layout = ()=>{
     return(
       <>
       {/* <Game/> */}
+      <QueryClientProvider client={queryClient}>
       <ScrollToTop/>
       <Navbar/>
       <Outlet/>
       <Footer/>
+      </QueryClientProvider>
       </>
     )
   }

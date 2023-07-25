@@ -26,7 +26,7 @@ const Register = () => {
     e.preventDefault();
     const url = await upload(file);
     try {
-      await axios.post("/auth/register",{
+      await axios.post("/api/auth/register",{
         ...user,img:url
       })
       navigate("/")

@@ -4,6 +4,7 @@ import dotenv from 'dotenv'
 import userRouter from './routes/user.route.js'
 import authRouter from './routes/auth.router.js'
 import gigRouter from './routes/gig.router.js'
+import reviewRouter from './routes/review.router.js'
 import cors from 'cors'
 import cookieParser from 'cookie-parser';
 
@@ -35,7 +36,8 @@ app.use(cors({origin:"http://localhost:5173",credentials:true}));
 
 app.use('/api/auth',authRouter);
 app.use('/api/user',userRouter);
-app.use('/api/gig',gigRouter);
+app.use('/api/gigs',gigRouter);
+app.use('/api/reviews',reviewRouter);
 
 app.use((err, req, res, next) => {
     const errorStatus = err.status || 500;

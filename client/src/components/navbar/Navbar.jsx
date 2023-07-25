@@ -14,7 +14,7 @@ const Navbar = () => {
   }
   const handleLogout = async ()=>{
     try {
-      await axios.post("/auth/logout")
+      await axios.post("/api/auth/logout")
       localStorage.setItem("currentUser",null)
       navigate("/")
     } catch (error) {

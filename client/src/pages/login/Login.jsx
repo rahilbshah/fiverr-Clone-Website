@@ -12,7 +12,7 @@ const Login = () => {
   const handleSubmit = async (e)=>{
     e.preventDefault();
     try {
-      const res = await axios.post("/auth/login",{username,password},{withCredentials:true})
+      const res = await axios.post("/api/auth/login",{username,password},{withCredentials:true})
       setError(null);
       localStorage.setItem("currentUser",JSON.stringify(res.data))
       navigate("/")
